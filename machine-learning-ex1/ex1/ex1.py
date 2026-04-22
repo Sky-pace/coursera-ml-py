@@ -1,10 +1,9 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.colors import LogNorm
-from mpl_toolkits.mplot3d import axes3d, Axes3D
-from computeCost import *
-from gradientDescent import *
-from plotData import *
+from computeCost import compute_cost
+from gradientDescent import gradient_descent
+from plotData import plot_data
 
 # ===================== Part 1: Plotting =====================
 print('Plotting Data...')

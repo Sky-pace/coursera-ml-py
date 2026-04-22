@@ -75,7 +75,9 @@ def grad_func(t):
 
 
 # Run fmin_bfgs to obtain the optimal theta
-theta, cost, *unused = opt.fmin_bfgs(f=cost_func, fprime=grad_func, x0=initial_theta, maxiter=400, full_output=True, disp=False)
+result = opt.fmin_bfgs(f=cost_func, fprime=grad_func, x0=initial_theta, maxiter=400, full_output=True, disp=False)
+theta = result[0]
+cost = result[1]
 
 print('Cost at theta found by fmin: {:0.4f}'.format(cost))
 print('Expected cost (approx): 0.203')

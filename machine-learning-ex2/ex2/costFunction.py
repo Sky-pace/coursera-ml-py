@@ -14,6 +14,9 @@ def cost_function(theta, X, y):
     #                You should set cost and grad correctly.
     #
 
+    h = sigmoid(X @ theta)
+    cost = (-1 / m) * (y @ np.log(h) + (1 - y) @ np.log(1 - h))
+    grad = (1 / m) * X.T @ (h - y)
 
     # ===========================================================
 

@@ -90,7 +90,9 @@ def cost_func(t):
 def grad_func(t):
     return cfr.cost_function_reg(t, X, y, lmd)[1]
 
-theta, cost, *unused = opt.fmin_bfgs(f=cost_func, fprime=grad_func, x0=initial_theta, maxiter=400, full_output=True, disp=False)
+result = opt.fmin_bfgs(f=cost_func, fprime=grad_func, x0=initial_theta, maxiter=400, full_output=True, disp=False)
+theta = result[0]
+cost = result[1]
 
 # Plot boundary
 print('Plotting decision boundary ...')

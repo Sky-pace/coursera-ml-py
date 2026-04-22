@@ -1,5 +1,5 @@
 import numpy as np
-from computeCost import *
+from computeCost import compute_cost
 
 
 def gradient_descent(X, y, theta, alpha, num_iters):
@@ -13,6 +13,7 @@ def gradient_descent(X, y, theta, alpha, num_iters):
         #
         # Hint: X.shape = (97, 2), y.shape = (97, ), theta.shape = (2, )
 
+        theta = theta - alpha * (1 / m) * X.T @ (X @ theta - y)
 
         # ===========================================================
         # Save the cost every iteration
@@ -31,6 +32,7 @@ def gradient_descent_multi(X, y, theta, alpha, num_iters):
         # Instructions : Perform a single gradient step on the parameter vector theta
         #
 
+        theta = theta - alpha * (1 / m) * X.T @ (X @ theta - y)
 
         # ===========================================================
         # Save the cost every iteration

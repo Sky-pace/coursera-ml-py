@@ -8,5 +8,6 @@ def normal_eqn(X, y):
     #                to linear regression and put the result in theta
     #
 
+    theta = np.linalg.pinv(X.T @ X) @ X.T @ y
 
     return theta
